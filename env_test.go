@@ -1,16 +1,15 @@
 package envconfig
 
 import (
-	"fmt"
 	"os"
 	"testing"
 )
 
 type Config struct {
-	String string `env:"STRING" default:"abc"`
-	Int    int    `env:"INT" default:"90"`
-	Int8   int8   `env:"INT8" default:"91"`
-	Bool   bool   `env:"BOOL" default:"true"`
+	String  string  `env:"STRING" default:"abc"`
+	Int     int     `env:"INT" default:"90"`
+	Bool    bool    `env:"BOOL" default:"true"`
+	Float32 float32 `env:"FLOAT32" default:"9.9"`
 }
 
 func TestParse(t *testing.T) {
@@ -31,5 +30,20 @@ func TestParse(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	fmt.Println(v)
+
+	if v.String != "abc" {
+		t.Error("parse string error")
+	}
+
+	if v.Bool {
+		t.Error("parse bool error")
+	}
+
+	if v.Int != 12 {
+		t.Error("parse int error")
+	}
+
+	if v.Float32 != 9.9 {
+		t.Error("parse float32 error")
+	}
 }
