@@ -232,7 +232,7 @@ func Parse(prefix string, spec interface{}) error {
 					return err
 				}
 			}
-			sv = float32(t)
+			sv = t
 		}
 		re.Field(i).Set(reflect.ValueOf(sv))
 	}
