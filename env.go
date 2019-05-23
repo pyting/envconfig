@@ -9,19 +9,19 @@ import (
 )
 
 const (
-	Err = "expected a pointer to a struct"
+	typeError = "expected a pointer to a struct"
 )
 
 func Parse(prefix string, spec interface{}) error {
 
 	rv := reflect.ValueOf(spec)
 	if rv.Kind() != reflect.Ptr {
-		return errors.New(Err)
+		return errors.New(typeError)
 	}
 
 	re := rv.Elem()
 	if re.Kind() != reflect.Struct {
-		return errors.New(Err)
+		return errors.New(typeError)
 	}
 
 	for i := 0; i < re.NumField(); i++ {
