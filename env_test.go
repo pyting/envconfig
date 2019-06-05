@@ -18,7 +18,7 @@ func TestParse(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	err = os.Setenv("EX_INT", "12")
+	err = os.Setenv("EX_INT", "")
 	if err != nil {
 		t.Error(err)
 	}
@@ -39,7 +39,7 @@ func TestParse(t *testing.T) {
 		t.Error("parse bool error")
 	}
 
-	if v.Int != 12 {
+	if v.Int != 90 {
 		t.Error("parse int error")
 	}
 

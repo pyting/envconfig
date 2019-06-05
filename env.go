@@ -41,10 +41,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Bool:
 			var t bool
 			var err error
-			if v == "" && defV != "" && defV != "false" {
-				t, err = strconv.ParseBool(defV)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "false" {
+					t, err = strconv.ParseBool(defV)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseBool(v)
@@ -56,10 +58,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Int:
 			var t int64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseInt(defV, 10, 32)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseInt(defV, 10, 32)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseInt(v, 10, 32)
@@ -71,10 +75,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Int8:
 			var t int64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseInt(defV, 10, 8)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseInt(defV, 10, 8)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseInt(v, 10, 8)
@@ -86,10 +92,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Int16:
 			var t int64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseInt(defV, 10, 16)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseInt(defV, 10, 16)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseInt(v, 10, 16)
@@ -101,10 +109,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Int32:
 			var t int64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseInt(defV, 10, 32)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseInt(defV, 10, 32)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseInt(v, 10, 32)
@@ -116,10 +126,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Int64:
 			var t int64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseInt(defV, 10, 64)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseInt(defV, 10, 64)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseInt(v, 10, 64)
@@ -131,10 +143,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Uint:
 			var t uint64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseUint(defV, 10, 32)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseUint(defV, 10, 32)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseUint(v, 10, 32)
@@ -146,10 +160,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Uint8:
 			var t uint64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseUint(defV, 10, 8)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseUint(defV, 10, 8)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseUint(v, 10, 8)
@@ -161,10 +177,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Uint16:
 			var t uint64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseUint(defV, 10, 16)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseUint(defV, 10, 16)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseUint(v, 10, 16)
@@ -176,10 +194,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Uint32:
 			var t uint64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseUint(defV, 10, 32)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseUint(defV, 10, 32)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseUint(v, 10, 32)
@@ -191,10 +211,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Uint64:
 			var t uint64
 			var err error
-			if v == "" && defV != "" && defV != "0" {
-				t, err = strconv.ParseUint(defV, 10, 64)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" && defV != "0" {
+					t, err = strconv.ParseUint(defV, 10, 64)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseUint(v, 10, 64)
@@ -206,10 +228,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Float32:
 			var t float64
 			var err error
-			if v == "" && defV != "" {
-				t, err = strconv.ParseFloat(defV, 32)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" {
+					t, err = strconv.ParseFloat(defV, 32)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseFloat(v, 32)
@@ -221,10 +245,12 @@ func Parse(prefix string, spec interface{}) error {
 		case reflect.Float64:
 			var t float64
 			var err error
-			if v == "" && defV != "" {
-				t, err = strconv.ParseFloat(defV, 64)
-				if err != nil {
-					return err
+			if v == "" {
+				if defV != "" {
+					t, err = strconv.ParseFloat(defV, 64)
+					if err != nil {
+						return err
+					}
 				}
 			} else {
 				t, err = strconv.ParseFloat(v, 64)
